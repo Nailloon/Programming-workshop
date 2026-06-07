@@ -78,5 +78,5 @@ resources:
     cpu: 500m
 
 extraEnvVars: 
-  - name: "FORCE_HTTPS" 
+  - name: FORCE_HTTPS
     value: "false"
