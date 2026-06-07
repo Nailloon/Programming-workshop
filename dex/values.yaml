@@ -11,11 +11,6 @@ serviceAccount:
   create: true
   name: dex
 
-env:
-  0:
-    name: DEX_LOG_LEVEL
-    value: debug
-
 config:
   issuer: https://dex.cluster.k8s
   storage:
