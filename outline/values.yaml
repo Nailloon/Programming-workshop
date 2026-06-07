@@ -29,6 +29,9 @@ ingress:
         - path: /
           pathType: Prefix
 
+externalPostgresql:
+  password: "change-me-external-password"
+
 postgresql:
   enabled: true
   auth:
