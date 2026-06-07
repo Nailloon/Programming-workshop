@@ -1,0 +1,64 @@
+image:
+  repository: outlinewiki/outline
+  tag: 1.8.0
+
+url: https://outline.cluster.k8s
+
+# Настройки аутентификации (важно! Отключаем OIDC для локального тестирования)
+auth:
+  type: none
+  disableDemoWarning: true
+  requireSignup: true
+
+secretKey: "my-super-secret-key-for-outline"
+utilsSecret: "my-super-utils-secret"
+
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  hostname: outline.cluster.k8s
+  pathType: Prefix
+  path: /
+
+postgresql:
+  enabled: true
+  auth:
+    database: outline
+    username: outline
+    password: "change-me-postgres-password"
+    postgresPassword: "change-me-postgres-postgres-password"
+  primary:
+    persistence:
+      enabled: true
+      size: 5Gi
+
+redis:
+  enabled: true
+  architecture: standalone
+  auth:
+    password: "change-me-redis-password"
+  master:
+    persistence:
+      enabled: true
+      size: 2Gi
+
+minio:
+  enabled: true
+  rootUser: outline
+  rootPassword: "change-me-minio-password"
+  persistence:
+    enabled: true
+    size: 5Gi
+    accessModes: ["ReadWriteOnce"]
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 100m
+
+resources:
+  requests:
+    memory: 512Mi
+    cpu: 250m
+  limits:
+    memory: 1Gi
+    cpu: 500m
