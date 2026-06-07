@@ -8,12 +8,15 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://charts.dexidp.io
-    chart: dex
-    targetRevision: 0.24.1
-    helm:
-      valueFiles:
-        - "../dex/values.yaml"
+    - repoURL: https://charts.dexidp.io
+      chart: dex
+      targetRevision: 0.24.1
+      helm:
+        valueFiles:
+        - $values/dex/values.yaml
+    - repoURL: https://github.com/Nailloon/Programming-workshop
+      targetRevision: main
+      ref: values
   destination:
     server: https://kubernetes.default.svc
     namespace: auth
