@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dex
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  sources:                                      # ← plural here
+    - repoURL: https://charts.dexidp.io
+      chart: dex
+      targetRevision: 0.24.1
+      helm:
+        valueFiles:
+          - $values/dex/values.yaml
+    - repoURL: https://github.com/Nailloon/Programming-workshop
+      targetRevision: main
+      ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: auth
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true 
+    automated:
+      prune: true
+      selfHeal: true
