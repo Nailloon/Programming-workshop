@@ -29,7 +29,8 @@ config:
       redirectURIs:
         - http://outline.cluster.k8s/auth/oidc.callback
       secret: outline-secret
-  connectors:
-    - type: mockCallback
-      id: mock
-      name: Local Mock
+  staticPasswords:
+    - email: test@example.com
+      hash: "$2a$10$CwTycUXWue0Thq9StjUM0uJ8S0Ksf5zWkD0dWKmYj4EO67F0z0iI2"
+      username: test
+      userID: "test-user"
