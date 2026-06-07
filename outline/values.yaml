@@ -77,4 +77,5 @@ resources:
     memory: 1Gi
     cpu: 500m
 
-forceHttps: false
+extraEnvVars: 
+  FORCE_HTTPS: "false"
