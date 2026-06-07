@@ -17,8 +17,8 @@ auth:
       - profile
       - email
 
-secretKey: "my-super-secret-key-for-outline"
-utilsSecret: "my-super-utils-secret"
+secretKey: "0000000000000000000000000000000000000000000000000000000000000000"
+utilsSecret: "demo-utils-secret-for-minikube-only"
 
 ingress:
   enabled: true
