@@ -12,7 +12,7 @@ serviceAccount:
   name: dex
 
 config:
-  issuer: https://dex.cluster.k8s
+  issuer: http://dex.cluster.k8s
   storage:
     type: kubernetes
     config:
@@ -27,7 +27,7 @@ config:
     - id: outline
       name: Outline
       redirectURIs:
-        - https://outline.cluster.k8s/auth/oidc.callback
+        - http://outline.cluster.k8s/auth/oidc.callback
       secret: outline-secret
   connectors:
     - type: mockCallback

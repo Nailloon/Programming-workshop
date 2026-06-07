@@ -6,9 +6,9 @@ auth:
   oidc:
     enabled: true
     displayName: Local Dex
-    authUri: https://dex.cluster.k8s/auth
-    tokenUri: https://dex.cluster.k8s/token
-    userInfoUri: https://de/userinfo
+    authUri: http://dex.cluster.k8s/auth
+    tokenUri: http://dex.cluster.k8s/token
+    userInfoUri: http://de/userinfo
     clientId: outline
     clientSecret: outline-secret
     usernameClaim: email
@@ -76,3 +76,5 @@ resources:
   limits:
     memory: 1Gi
     cpu: 500m
+
+forceHttps: false
