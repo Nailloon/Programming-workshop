@@ -7,13 +7,16 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
-  source:
-    repoURL: https://community-charts.github.io/helm-charts
-    chart: outline
-    targetRevision: 0.8.0
-    helm:
+  sources:
+    - repoURL: https://community-charts.github.io/helm-charts
+      chart: outline
+      targetRevision: 0.8.0
+      helm:
       valueFiles:
-        - "../outline/values.yaml"
+        - $values/outline/values.yaml
+    - repoURL: https://github.com/Nailloon/Programming-workshop
+      targetRevision: main
+      ref: values
   destination:
     server: https://kubernetes.default.svc
     namespace: default
