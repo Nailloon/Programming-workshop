@@ -22,15 +22,13 @@ ingress:
 
 postgresql:
   enabled: true
-  auth:
-    username: outline
-    password: "change-me-postgres-password"
-    database: outline
-    postgresPassword: "change-me-postgres-postgres-password"
-  primary:
-    persistence:
-      enabled: true
-      size: 5Gi
+  postgresqlUsername: outline
+  postgresqlPassword: "change-me-postgres-password"
+  postgresqlDatabase: outline
+  postgresqlPostgresPassword: "change-me-postgres-postgres-password"
+  persistence:
+    enabled: true
+    size: 5Gi
 
 redis:
   enabled: true
