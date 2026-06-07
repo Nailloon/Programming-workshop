@@ -29,25 +29,28 @@ ingress:
         - path: /
           pathType: Prefix
 
-externalPostgresql:
-  password: "change-me-external-password"
-
 postgresql:
   enabled: true
+  architecture: standalone
   auth:
     username: outline
     password: "change-me-postgres-password"
     database: outline
+    postgresPassword: "change-me-postgres-postgres-password"
   primary:
     persistence:
       enabled: true
       size: 5Gi
 
+externalPostgresql:
+  password: "change-me-postgres-password"
+
 redis:
   enabled: true
-  auth:
-    password: "change-me-redis-password"
   architecture: standalone
+  auth:
+    enabled: true
+    password: "change-me-redis-password"
   master:
     persistence:
       enabled: true
