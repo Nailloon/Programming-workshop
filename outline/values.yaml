@@ -35,7 +35,6 @@ postgresql:
     username: outline
     password: "change-me-postgres-password"
     database: outline
-    postgresPassword: "change-me-postgres-postgres-password"
   primary:
     persistence:
       enabled: true
