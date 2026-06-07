@@ -8,7 +8,7 @@ auth:
     displayName: Local Dex
     authUri: http://dex.cluster.k8s/auth
     tokenUri: http://dex.cluster.k8s/token
-    userInfoUri: http://de/userinfo
+    userInfoUri: http://dex.cluster.k8s/userinfo
     clientId: outline
     clientSecret: outline-secret
     usernameClaim: email
