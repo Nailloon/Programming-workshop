@@ -17,8 +17,8 @@ auth:
       - profile
       - email
 
-secretKey: "0000000000000000000000000000000000000000000000000000000000000000"
-utilsSecret: "demo-utils-secret-for-minikube-only"
+secretKey: "6defbf8a571005ae08658d84046b563b6a990aaa189931cf9ae3e1f5d22e7188"
+utilsSecret: "06ab808e915d575ee76a7526e74fbadfeb59ea9b04825454b823f1a7374be613"
 
 ingress:
   enabled: true
