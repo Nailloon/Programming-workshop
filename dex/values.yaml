@@ -1,0 +1,44 @@
+config:
+  issuer: https://dex.cluster.k8s
+  storage:
+    type: kubernetes
+    config:
+      inCluster: true
+
+  web:
+    http: 5556
+
+  staticClients:
+    - id: outline
+      name: Outline
+      redirectURIs:
+        - https://outline.cluster.k8s/auth/oidc.callback
+      secret: outline-secret
+
+  oauth2:
+    skipApprovalScreen: true
+    alwaysShowLoginScreen: false
+
+  enablePasswordDB: true
+
+  connectors:
+    - type: mockCallback
+      id: mock
+      name: Local Mock
+      config:
+        username: test@example.com
+        userID: test-user
+        preferredUsername: test
+
+env:
+  - name: DEX_LOG_LEVEL
+    value: debug
+
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: dex.cluster.k8s
+      paths:
+        - path: /
+          pathType: Prefix
