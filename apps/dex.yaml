@@ -7,13 +7,13 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
-  source:
+  sources:                                      # ← plural here
     - repoURL: https://charts.dexidp.io
       chart: dex
       targetRevision: 0.24.1
       helm:
         valueFiles:
-        - $values/dex/values.yaml
+          - $values/dex/values.yaml
     - repoURL: https://github.com/Nailloon/Programming-workshop
       targetRevision: main
       ref: values
