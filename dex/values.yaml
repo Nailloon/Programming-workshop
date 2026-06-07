@@ -12,7 +12,8 @@ serviceAccount:
   name: dex
 
 env:
-  - name: DEX_LOG_LEVEL
+  0:
+    name: DEX_LOG_LEVEL
     value: debug
 
 config:
