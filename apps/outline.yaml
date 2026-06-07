@@ -12,8 +12,8 @@ spec:
       chart: outline
       targetRevision: 0.8.0
       helm:
-      valueFiles:
-        - $values/outline/values.yaml
+        valueFiles:
+          - $values/outline/values.yaml
     - repoURL: https://github.com/Nailloon/Programming-workshop
       targetRevision: main
       ref: values
