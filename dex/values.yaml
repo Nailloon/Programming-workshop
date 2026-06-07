@@ -33,7 +33,3 @@ config:
     - type: mockCallback
       id: mock
       name: Local Mock
-      config:
-        username: test@example.com
-        userID: test-user
-        preferredUsername: test
