@@ -8,9 +8,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Nailloon/Programming-workshop
-    targetRevision: HEAD
-    path: outline
+    repoURL: https://community-charts.github.io/helm-charts
+    chart: outline
+    targetRevision: 0.7.2
+    helm:
+      valueFiles:
+        - "../outline/values.yaml"
   destination:
     server: https://kubernetes.default.svc
     namespace: default
